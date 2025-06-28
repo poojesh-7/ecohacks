@@ -18,12 +18,12 @@ const TrendingHacksSection=async()=>{
 const HeroPage=()=>{
     
     return <section>
-
-        {/* <Suspense fallback={<Loader />}> */}
-            <RegularHacksSection />
+             <RegularHacksSection />
             <HackDetails />
-            <TrendingHacksSection/>
-        {/* </Suspense> */}
+            <TrendingHacksSection/>    
+            <footer style={{marginTop:"50px"}}>
+                <p style={{fontSize:"16px"}}>Copyright © 2025 EcoHackTips. All rights reserved.</p>
+            </footer>
     </section>
 }
 

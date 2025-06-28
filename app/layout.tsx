@@ -62,9 +62,6 @@ export default function RootLayout({
         <section className="hero_section">
           {children}
         </section>
-        <footer>
-            <p>Copyright © 2025 EcoHackTips. All rights reserved.</p>
-        </footer>
       </body>
     </html>
   );
