@@ -1,0 +1,33 @@
+.form_details {
+  margin: 80px 0 20px 0;
+}
+.details_holder {
+  padding-left: 10px;
+  display: grid;
+  grid-template-areas: "topl topl btn" "midl midl btn" "botl botl btn";
+  box-shadow: 1px 1px 2px 2px #0000002c;
+  border: 1px solid rgb(179, 178, 178);
+}
+
+.details_holder span {
+  display: block;
+}
+
+.steps {
+  grid-area: topl;
+}
+
+.headline {
+  grid-area: midl;
+}
+.example {
+  padding-left: 10px;
+  margin: 0 10px 10px 0;
+  border: 1px solid black;
+  grid-area: botl;
+}
+
+.btn_cover {
+  justify-self: end;
+  grid-area: btn;
+}

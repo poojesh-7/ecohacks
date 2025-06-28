@@ -1,0 +1,86 @@
+.ver_view {
+  background-color: #f991df;
+  width: 40px;
+  height: 100%;
+  border: none;
+  /* border-radius: 0 5px 0 5px; */
+}
+
+.btn_text {
+  font-size: 20px;
+}
+.btn_text span {
+  display: block;
+}
+
+.ver_post {
+  background-color: #90bbf6;
+  width: 50px;
+  height: 100%;
+  border: none;
+  border-radius: 0 5px 5px 0;
+}
+
+.add_step,
+.remove_step {
+  font-size: 16px;
+  padding: 5px 10px;
+  border: none;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.remove_step {
+  background-color: #e5f690;
+}
+
+.add_step {
+  background-color: #91cff9;
+}
+
+.add_step:hover {
+  transform: scale(1.1);
+}
+.remove_step:hover {
+  transform: scale(1.1);
+}
+
+.form_submit_btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #90bbf6;
+  border: none;
+  width: 40px;
+  border-radius: 5px 0 0 5px;
+}
+
+.signup_form_submit {
+  background-color: #e6cfa0;
+  width: 40px;
+  border: none;
+  font-size: 16px;
+  height: 150px;
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+}
+
+.signup_form_submit p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.logout_btn {
+  grid-area: bottom_left;
+  background-color: #ff4e4e;
+  width: 40px;
+  border: none;
+}
+.posts_btn {
+  grid-area: bottom_right;
+  justify-self: end;
+  background-color: #90bbf6;
+  width: 40px;
+  border: none;
+}

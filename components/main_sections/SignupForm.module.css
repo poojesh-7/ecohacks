@@ -1,0 +1,104 @@
+.container {
+  border-radius: 5px;
+  width: 320px;
+  padding: 10px 20px;
+  border: 1px solid rgb(173, 169, 169);
+  position: relative;
+  display: grid;
+  min-height: 320px;
+  font-family: "Futura", sans-serif;
+  background: white;
+  margin: 2rem auto;
+  gap: 1.2rem;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 4px solid #d3d3d3;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  outline: none;
+}
+
+.signup_heading {
+  justify-self: center;
+}
+
+.googleBtn {
+  margin-top: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submitBtn {
+  writing-mode: vertical-rl;
+  position: absolute;
+  right: -3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #e9d3a7;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Optional Decorative Borders */
+
+.container::before {
+  top: 0;
+  left: 0;
+}
+
+.container::after {
+  top: 0;
+  right: 0;
+}
+
+.googleBtnWrapper {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.switch_text {
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  right: 100px;
+  bottom: -50px;
+  user-select: none;
+}
+
+.gl {
+  position: absolute;
+  width: 12.5%;
+  height: 7px;
+  background-color: #33ffb1;
+}
+.pl {
+  position: absolute;
+  width: 8%;
+  height: 7px;
+  background-color: #ff3381;
+}
+.ps1 {
+  bottom: 0;
+  left: 0;
+}
+.ps2 {
+  bottom: 0;
+  right: 0;
+}
+.ps3 {
+  top: 0;
+  right: 0;
+}
+
+.ps4 {
+  top: 0;
+  left: 0;
+}

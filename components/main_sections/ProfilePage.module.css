@@ -1,0 +1,97 @@
+.profile_grid {
+  /* width: 100%; */
+  margin: 50px 20px 0 20px;
+  padding: 20px 0 0 0;
+  gap: 20px;
+  display: grid;
+  background-color: white;
+  /* grid-template-areas: "top_left top_middle top_right" 
+    "bottom_left bottom_middle bottom_right"; */
+  grid-template-areas:
+    "top_left top_middle top_right"
+    "middle middle middle"
+    "bottom_left bottom_middle bottom_right";
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  border: 2px solid rgb(133, 128, 128);
+}
+.user_content {
+  grid-area: top_left;
+  padding-left: 20px;
+}
+
+.user_ecopoints {
+  grid-area: middle;
+  justify-self: center;
+  align-self: center;
+}
+
+.user_ecopoints p {
+  text-align: center;
+  margin: 0;
+  font-size: 60px;
+  background: linear-gradient(#33ffb1, #e84a86);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.acc_created {
+  grid-area: bottom_middle;
+  justify-self: center;
+  align-self: center;
+}
+
+.profile_img {
+  grid-area: top_right;
+  margin-right: 20px;
+  border-radius: 50%;
+  background-color: rgb(193, 193, 193);
+  justify-self: end;
+  width: 150px;
+  height: 150px;
+}
+
+.gl {
+  position: absolute;
+  width: 10%;
+  height: 7px;
+  background-color: #33ffb1;
+}
+.pl {
+  position: absolute;
+  width: 8%;
+  height: 7px;
+  background-color: #ff3381;
+}
+.ps1 {
+  bottom: 0;
+  left: 0;
+}
+.ps2 {
+  bottom: 0;
+  right: 0;
+}
+.ps3 {
+  top: 0;
+  right: 0;
+}
+
+.ps4 {
+  top: 0;
+  left: 0;
+}
+
+@media screen and (min-width: 800px) {
+  .profile_grid {
+    grid-template-areas:
+      "top_left top_middle top_right"
+      "bottom_left bottom_middle bottom_right";
+    width: 60%;
+  }
+  .acc_created {
+    grid-area: top_middle;
+  }
+  .user_ecopoints {
+    grid-area: bottom_middle;
+  }
+}

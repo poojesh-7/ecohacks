@@ -1,0 +1,101 @@
+.view_section {
+  width: 100%;
+}
+
+.viewsingle {
+  display: grid;
+  /* width: 100%; */
+  grid-template-areas: "top top" "secl secr" "third third" "four four" "five five";
+}
+
+.title {
+  grid-area: top;
+}
+
+.image {
+  width: 100%;
+  object-fit: contain;
+  grid-area: third;
+  justify-self: center;
+  height: auto;
+}
+.user {
+  grid-area: secl;
+  font-weight: bold;
+  color: gray;
+}
+.date {
+  grid-area: secr;
+  justify-self: end;
+  font-weight: bold;
+  color: gray;
+}
+
+.description {
+  grid-area: four;
+}
+.steps {
+  grid-area: five;
+}
+.steps ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.similar {
+  font-size: 26px;
+}
+
+.hacks_section {
+  /* width: 100%; */
+  display: grid;
+  grid-gap: 10px;
+}
+
+.hack_card_visibility:nth-of-type(1) {
+  display: none;
+}
+.hack_card_visibility:nth-of-type(2) {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .hacks_section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .image {
+    width: 90%;
+  }
+
+  .hack_card_visibility:nth-of-type(2) {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .view_section {
+    display: grid;
+    grid-template-areas: "major major minor" "major major minor" "major major minor2";
+    gap: 20px;
+  }
+  .viewsingle {
+    grid-area: major;
+  }
+  .similar_hacks {
+    grid-area: minor;
+    margin-top: 150px;
+  }
+
+  .hacks_section {
+    width: 300px;
+    grid-template-columns: 1fr;
+  }
+  .usercontact {
+    grid-area: minor2;
+  }
+
+  .hack_card_visibility:nth-of-type(1) {
+    display: block;
+  }
+}

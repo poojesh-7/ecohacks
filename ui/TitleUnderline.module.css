@@ -1,0 +1,23 @@
+.title_underline {
+  display: inline-block;
+}
+
+.title_underline h2 {
+  margin-bottom: 2px;
+}
+
+.underline {
+  width: 100%;
+  height: 5px;
+  display: flex;
+}
+.gl {
+  width: 80%;
+  height: 5px;
+  background-color: #33ffb1;
+}
+.pl {
+  width: 20%;
+  height: 5px;
+  background-color: #ff3381;
+}
