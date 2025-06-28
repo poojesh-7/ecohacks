@@ -1,10 +1,10 @@
-import { Suspense } from "react"
+// import { Suspense } from "react"
+// import Loader from "@/ui/Loader"
 import HackDetails from "@/components/hero_comp/FormDetails"
 import RegularHacks from "@/components/hero_comp/RegularHacks"
 import TrendingHacks from "@/components/hero_comp/TrendingHacks"
 import { getData } from "@/lib/action"
 import React from "react"
-import Loader from "@/ui/Loader"
 const RegularHacksSection=async()=>{
     const hacks=await getData()
     const regularHacks=hacks.filter(hack=>hack.trending===false).slice(0,3)
@@ -19,11 +19,11 @@ const HeroPage=()=>{
     
     return <section>
 
-        <Suspense fallback={<Loader />}>
+        {/* <Suspense fallback={<Loader />}> */}
             <RegularHacksSection />
             <HackDetails />
             <TrendingHacksSection/>
-        </Suspense>
+        {/* </Suspense> */}
     </section>
 }
 
