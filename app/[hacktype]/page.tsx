@@ -30,7 +30,7 @@ export async function generateMetadata({
       images: [
         {
           url: isTrending
-            ? "https://i.ibb.co/d4R8PBq4/hacks.png"
+            ? "https://i.ibb.co/HTZn8Gfx/trending.png"
             : "https://i.ibb.co/d4R8PBq4/hacks.png",
           width: 1200,
           height: 630,
@@ -51,7 +51,7 @@ export async function generateMetadata({
         : "Easy and effective hacks to reduce household waste and recycle creatively.",
       images: [
         isTrending
-          ? "https://i.ibb.co/d4R8PBq4/hacks.png"
+          ? "https://i.ibb.co/HTZn8Gfx/trending.png"
           : "https://i.ibb.co/d4R8PBq4/hacks.png",
       ],
     },
