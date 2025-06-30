@@ -21,9 +21,6 @@ const HeroPage=()=>{
              <RegularHacksSection />
             <HackDetails />
             <TrendingHacksSection/>    
-            <footer style={{marginTop:"50px"}}>
-                <p style={{fontSize:"16px"}}>Copyright © 2025 EcoHackTips. All rights reserved.</p>
-            </footer>
     </section>
 }
 
