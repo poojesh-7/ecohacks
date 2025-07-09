@@ -95,7 +95,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 };
 
   
-  const handleGoogleSuccess = async (credentialResponse: any) => {
+  const handleGoogleSuccess = async (credentialResponse: unknown) => {
     const token = credentialResponse.credential;
     try {
       const res = await fetch(`${backend_api}/api/users/oauth`, {
