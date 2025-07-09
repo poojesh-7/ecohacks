@@ -9,6 +9,8 @@
 }
 
 .title {
+  display: flex;
+  justify-content: space-between;
   grid-area: top;
 }
 
@@ -58,6 +60,12 @@
 }
 .hack_card_visibility:nth-of-type(2) {
   display: none;
+}
+
+.like_dislike {
+  justify-self: end;
+  align-self: center;
+  display: flex;
 }
 
 @media screen and (min-width: 600px) {

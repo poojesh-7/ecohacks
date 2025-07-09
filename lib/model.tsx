@@ -1,12 +1,24 @@
+export type userModel={
+  user:{
+    _id:string,
+    createdAt:string,
+    email:string,
+    ecoPoints:number,
+    username:string,
+  },
+  postedHacks:HackModel[]
+}
+
 export type HackModel = {
-  id:string,
+  slug:string,
   title: string,
   description: string,
   image: string,
   steps: string[],
   username: string,
-  useremail: string,
+  email: string,
   likes: number,
+  dislikes: number,
   trending: boolean,
   postedOn: string,
   tutorialLink:string,

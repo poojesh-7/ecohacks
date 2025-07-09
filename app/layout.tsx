@@ -3,6 +3,7 @@ import { Josefin_Sans } from 'next/font/google';
 
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { AuthProvider } from "@/context/AuthProvider";
 const josefin = Josefin_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '700'], // choose weights you need
@@ -58,10 +59,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={josefin.className}>
+        <AuthProvider>
         <Navbar />
         <section className="hero_section">
           {children}
         </section>
+        </AuthProvider>
       </body>
     </html>
   );

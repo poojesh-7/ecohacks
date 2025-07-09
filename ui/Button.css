@@ -71,12 +71,18 @@
   margin-top: 10px;
 }
 
-.logout_btn {
+.logout_cover {
+  display: inline-block;
+  box-sizing: border-box;
   grid-area: bottom_left;
+  background: #e5f690;
+}
+.logout_btn {
   background-color: #ff4e4e;
   width: 40px;
   border: none;
 }
+
 .posts_btn {
   grid-area: bottom_right;
   justify-self: end;

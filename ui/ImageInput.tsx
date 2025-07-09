@@ -72,6 +72,7 @@ const ImageInput = ({ label, onChange, value,error,name, setError }: Props) => {
         <input
           type="text"
           className={classes.inp}
+          value={value}
           name={name}
           placeholder="Enter image URL"
           onChange={handleURLChange}

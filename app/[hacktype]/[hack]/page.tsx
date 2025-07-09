@@ -1,4 +1,4 @@
-import { getSingleHack } from "@/lib/action";
+import { getSimilarHack, getSingleHack } from "@/lib/hackaction";
 import ViewSingleHack from "@/components/main_sections/ViewSingleHack";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -17,7 +17,7 @@ export async function generateMetadata({
     };
   }
 
-  const [hack] = result;
+  const hack = result;
 
   return {
     title: `${hack.title} – by ${hack.username} | EcoHackTips`,
@@ -59,10 +59,9 @@ export default async function Page({
 }: {
   params: { hacktype: string; hack: string };
 }) {
-  const result = await getSingleHack(params.hack);
-  if (!result) return notFound();
+  const singleHack = await getSingleHack(params.hack);
+  const similarHacks = await getSimilarHack(params.hacktype,params.hack);
+  if (!singleHack) return notFound();
 
-  const [hack, similar] = result;
-
-  return <ViewSingleHack hack={hack} similarhacks={similar} />;
+  return <ViewSingleHack singleHack={singleHack} similarhacks={similarHacks} />;
 }

@@ -1,6 +1,6 @@
 import React from "react"
 const userProfileLayout:React.FC<{children:React.ReactNode}> =({children})=>{
-    return <section className="user_form_gradient">
+    return <section>
         {children}
     </section>
 }

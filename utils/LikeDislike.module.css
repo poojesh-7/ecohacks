@@ -1,0 +1,33 @@
+.like_btn {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+
+.like_btn:nth-of-type(1):hover {
+  transform: translateY(-8px) scale(0.9);
+  transition: all 0.5s ease;
+}
+
+.like_btn:nth-of-type(2):hover {
+  transform: translateY(8px) scale(0.9);
+  transition: all 0.5s ease;
+}
+
+.likes {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.like_img {
+  width: 40px;
+  height: 40px;
+}
+
+.login_error {
+  color: red;
+  top: 40px;
+  right: 50px;
+  position: absolute;
+}

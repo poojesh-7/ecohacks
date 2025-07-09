@@ -3,16 +3,16 @@
 import HackDetails from "@/components/hero_comp/FormDetails"
 import RegularHacks from "@/components/hero_comp/RegularHacks"
 import TrendingHacks from "@/components/hero_comp/TrendingHacks"
-import { getData } from "@/lib/action"
+import {  HacksData } from "@/lib/hackaction"
 import React from "react"
 const RegularHacksSection=async()=>{
-    const hacks=await getData()
-    const regularHacks=hacks.filter(hack=>hack.trending===false).slice(0,3)
+    const hacks=await HacksData('regular')
+    const regularHacks=hacks.slice(0,3)
     return <RegularHacks hacks={regularHacks} />
 }
 const TrendingHacksSection=async()=>{
-    const hacks=await getData()
-    const trendingHacks= hacks.filter(hack=>hack.trending===true).slice(0,3)
+    const hacks=await HacksData('trending')
+    const trendingHacks= hacks.slice(0,3)
     return <TrendingHacks hacks={trendingHacks} />
 }
 const HeroPage=()=>{

@@ -9,7 +9,7 @@ const TrendingHacks:React.FC<{hacks:HackModel[]}>=({hacks})=>{
             <div className={classes.hacks_holder}>
 
         {hacks.map((hack,i)=>(
-            <HackCard key={i} id={hack.id} title={hack.title} image={hack.image} username={hack.username}  trending={hack.trending} postedOn={hack.postedOn} showuser={true} />
+            <HackCard key={i} slug={hack.slug} title={hack.title} image={hack.image} username={hack.username}  trending={hack.trending} postedOn={hack.postedOn} showuser={true} />
         ))}
         </div>
         

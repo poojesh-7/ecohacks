@@ -47,7 +47,7 @@ const HacksLoader:React.FC<{hacks:HackModel[],text:string}>=({hacks,text})=>{
         <TitleCover text={text} />
         <div className={classes.hacks_holder}>
             {hacks.slice(firstHackIndex,lastHackIndex).map((hack,i)=>(
-                <HackCard  key={i} id={hack.id} title={hack.title} image={hack.image} username={hack.username}  trending={hack.trending} postedOn={hack.postedOn} showuser={true} />
+                <HackCard  key={i}  title={hack.title} image={hack.image} username={hack.username}  trending={hack.trending} slug={hack.slug} postedOn={hack.postedOn} showuser={true} />
             ))}
         </div>
         <div className={classes.pageno}>

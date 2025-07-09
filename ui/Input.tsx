@@ -19,7 +19,7 @@ const Input:React.FC<InputModel>=({type,el,label,name,value,clickEvent})=>{
                 placeholder={"Enter "+label}
                 onChange={clickEvent}
                 />:
-                <textarea onChange={clickEvent} name={name} className={classes.tarea}/>
+                <textarea onChange={clickEvent} name={name} value={value} className={classes.tarea}/>
             }
             <div className={classes.gl}></div>
             <div className={classes.pl}></div>

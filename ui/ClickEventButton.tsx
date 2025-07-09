@@ -5,21 +5,21 @@ import "./Button.css";
 type ButtonModel = {
   classType: string;
   text: string;
-  onClick?: () => void;
+  clickEvent: () => void;
 };
 
-const Button: React.FC<ButtonModel> = ({ classType, text, onClick }) => {
-  const [disabled, setDisabled] = useState(false);
+const ClickEventButton: React.FC<ButtonModel> = ({ classType, text, clickEvent }) => {
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
-    if (!disabled) {
-      setDisabled(true); // Disable immediately
-      onClick?.(); // Run click logic (like navigation)
+    if (!isClicked) {
+      setIsClicked(true);
+      clickEvent();
     }
   };
 
   return (
-    <button className={classType} onClick={handleClick} disabled={disabled}>
+    <button onClick={handleClick} className={classType} disabled={isClicked}>
       <p className="btn_text">
         {text.split("").map((char, i) => (
           <span key={i}>{char === " " ? "\u00A0" : char}</span>
@@ -29,4 +29,4 @@ const Button: React.FC<ButtonModel> = ({ classType, text, onClick }) => {
   );
 };
 
-export default Button;
+export default ClickEventButton;
