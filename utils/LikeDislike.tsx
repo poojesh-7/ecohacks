@@ -1,8 +1,8 @@
-"use client"
 import { useAuth } from "@/context/AuthProvider"
 import { LikeHack,DislikeHack } from "@/lib/hackaction";
 import React, { useState } from "react";
 import classes from "./LikeDislike.module.css"
+import Link from "next/link";
 type likeDislikeModel={
     likes:number;
     dislikes:number;
@@ -11,40 +11,38 @@ type likeDislikeModel={
 
 const LikeDislike:React.FC<likeDislikeModel>=({likes,dislikes,slug})=>{
     const [usermetrics,setUserMetrics]=useState({likes,dislikes})
-    const [message,setMessage]=useState("")
     const {token}=useAuth()
     const likeFn=async()=>{
-        try{
             const data=await LikeHack(token,slug)
-            setUserMetrics(prev=>{
-                return {likes:data.likes,dislikes:data.dislikes}
-            })
-        }catch(e){
-            setMessage(e.message)
-            
-        }
+            setUserMetrics({likes:data.likes,dislikes:data.dislikes})
+        
     }
     const dislikeFn=async()=>{
-        try{
+
             const data=await DislikeHack(token,slug)
-            setUserMetrics(prev=>{
-                return {likes:data.likes,dislikes:data.dislikes}
-            })
-            
-        }catch(e){
-            setMessage(e.message)
-        }
+            setUserMetrics({likes:data.likes,dislikes:data.dislikes})            
     }
     return <>
-            <button className={classes.like_btn} onClick={likeFn}>
-                <img src="https://i.ibb.co/chsW6jkK/like.png" alt="like" className={classes.like_img} />
-            </button>
-            <p className={classes.likes}>{usermetrics.likes}</p>
-            <button className={classes.like_btn} onClick={dislikeFn}>
-                <img src="https://i.ibb.co/YFvCPZbL/dislike.png" alt="dislike" className={classes.like_img}  />
-            </button>
+            {!token?<Link href="/signup" >
+                    <button className={classes.like_btn}  >
+                        <img src="https://i.ibb.co/chsW6jkK/like.png" alt="like" className={classes.like_img} />
+                    </button>
+                    </Link>:
+                    <button className={classes.like_btn} onClick={likeFn} >
+                        <img src="https://i.ibb.co/chsW6jkK/like.png" alt="like" className={classes.like_img} />
+                    </button>
+            }
+            <p className={classes.likes} >{usermetrics.likes}</p>
+            {!token?<Link href="/signup" >
+                    <button className={classes.like_btn}>
+                        <img src="https://i.ibb.co/YFvCPZbL/dislike.png" alt="dislike" className={classes.like_img}  />
+                    </button>
+                    </Link>:
+                    <button className={classes.like_btn} onClick={dislikeFn}>
+                        <img src="https://i.ibb.co/YFvCPZbL/dislike.png" alt="dislike" className={classes.like_img}  />
+                    </button>
+            }
             <p className={classes.likes}>{usermetrics.dislikes}</p>
-            <p className={classes.login_error}>{message}</p>
     </>
 }
 
