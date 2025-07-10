@@ -47,6 +47,11 @@
   cursor: pointer;
 }
 
+.image_btn:disabled {
+  background-color: #4a4949;
+  cursor: not-allowed;
+}
+
 .preview {
   width: 50%;
   border-radius: 5px;

@@ -83,7 +83,8 @@ const ImageInput = ({ label, onChange, value,error,name, setError }: Props) => {
 
       <button
         type="button"
-        onClick={triggerFileInput}
+        disabled
+        // onClick={triggerFileInput}
         className={classes.image_btn}
       >
         📁 Upload image from computer
