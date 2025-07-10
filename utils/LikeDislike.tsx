@@ -1,3 +1,4 @@
+"use client"
 import { useAuth } from "@/context/AuthProvider"
 import { LikeHack,DislikeHack } from "@/lib/hackaction";
 import React, { useState } from "react";
