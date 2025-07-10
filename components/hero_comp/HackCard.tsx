@@ -4,7 +4,7 @@ import classes from './HackCard.module.css'
 import Button from "@/ui/Button"
 import Link from "next/link"
 import { dateFormat } from "@/utils/utils"
-
+import TitleUnderline from "@/ui/TitleUnderline"
 type HackModel={image:string,title:string,slug:string,username:string,trending:boolean,postedOn:string}
 interface HackCardProps extends HackModel {
   showuser: boolean,btntext?:string
@@ -22,7 +22,10 @@ const HackCard:React.FC<HackCardProps>=({slug,image,title,username,trending,post
             </Link>
             }
         </div>
-        <p className={classes.title}>{title}</p>
+        <div className={classes.title}>
+            <TitleUnderline classType="card_title" text={title}></TitleUnderline>
+        </div>
+        {/* <p className={classes.title}>{title}</p> */}
         {
             showuser &&
             <>

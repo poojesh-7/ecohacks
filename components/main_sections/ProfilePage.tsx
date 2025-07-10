@@ -39,7 +39,7 @@ const ProfilePage:React.FC<ProfileModel>=({profile,logoutFunction})=>{
     </div>
     {showUserPosts && 
     <>
-        <div>
+        <div className={classes.user_hacks_covers}>
             <TitleCover text="My Posts" />
             <div className={styles.hacks_holder}>
                 {profile?.postedHacks.length>0?profile?.postedHacks.map((hack,i)=>(

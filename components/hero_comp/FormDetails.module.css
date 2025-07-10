@@ -2,6 +2,8 @@
   margin: 80px 0 20px 0;
 }
 .details_holder {
+  background-color: white;
+  border-radius: 5px;
   padding-left: 10px;
   display: grid;
   grid-template-areas: "topl topl btn" "midl midl btn" "botl botl btn";
@@ -21,6 +23,7 @@
   grid-area: midl;
 }
 .example {
+  border-radius: 5px;
   padding-left: 10px;
   margin: 0 10px 10px 0;
   border: 1px solid black;

@@ -2,19 +2,21 @@
   padding: 0 20px 50px 20px;
   display: grid;
   grid-template-areas: "top" "bottom";
+  border-radius: 10px;
   /* justify-content: center; */
   /* align-items: center; */
-  background: linear-gradient(#33ffb152, #ff338153);
   position: absolute;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   left: 0;
   margin-top: -20px;
 }
 
 .profile_grid {
+  background: linear-gradient(#ffffff52, #33ffcc53);
   justify-self: center;
   width: 100%;
+  border-radius: 5px;
   /* margin: 50px 20px 0 20px; */
   margin: 30px 0 20px 0;
   padding: 10px 0 0 0;
@@ -67,6 +69,11 @@
   justify-self: end;
   width: 150px;
   height: 150px;
+}
+
+.user_hacks_covers {
+  padding: 0 30px;
+  padding-bottom: 50px;
 }
 
 .gl {

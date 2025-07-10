@@ -1,12 +1,14 @@
 .hackcard {
   display: grid;
   background-color: white;
+  /* background: linear-gradient(#3370ff52, #ffbb3353); */
   margin-top: 30px;
   grid-template-areas: "topl topr" "mid mid" "botl botr";
   width: 100%;
+  min-height: 250px;
   border-radius: 5px;
   box-shadow: 1px 1px 2px 2px #0000002c;
-  border: 1px solid rgb(179, 178, 178);
+  border: 2px solid rgb(179, 178, 178);
 }
 
 .btn_cover {

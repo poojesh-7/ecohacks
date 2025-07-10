@@ -4,7 +4,7 @@ import TitleCover from "@/ui/TitleCover"
 import HackCard from "../hero_comp/HackCard"
 import TitleUnderline from "@/ui/TitleUnderline"
 import { dateFormat } from "@/utils/utils"
-import LikeDislike from "@/utils/LikeDislike"
+import LikeDislikeWrapper from "@/utils/LikeDislikeWrapper"
 
 const ViewSingleHack:React.FC<{singleHack:HackModel,similarhacks:HackModel[]}>=({singleHack,similarhacks})=>{
     return <section className={classes.view_section}>
@@ -12,7 +12,7 @@ const ViewSingleHack:React.FC<{singleHack:HackModel,similarhacks:HackModel[]}>=(
         <div className={classes.title}>
             <TitleCover text={singleHack.title}/>
             <div className={classes.like_dislike}>
-                <LikeDislike likes={singleHack.likes} dislikes={singleHack.dislikes}  slug={singleHack.slug} />
+                <LikeDislikeWrapper likes={singleHack.likes} dislikes={singleHack.dislikes}  slug={singleHack.slug} />
             </div>
         </div>
         <p className={classes.user}>{singleHack.username}</p>

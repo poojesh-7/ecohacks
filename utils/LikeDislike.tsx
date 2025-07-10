@@ -1,9 +1,6 @@
-"use client"
-
 import { useAuth } from "@/context/AuthProvider"
 import { LikeHack,DislikeHack } from "@/lib/hackaction";
 import React, { useState } from "react";
-import Image from "next/image";
 import classes from "./LikeDislike.module.css"
 type likeDislikeModel={
     likes:number;
