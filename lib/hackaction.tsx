@@ -3,7 +3,10 @@ import { HackModel } from './model';
 const backend_api=process.env.NEXT_BACKEND_URL
 
 function getRandomDocuments(arr:HackModel[], count = 3, excludeId:string) {
-  const filtered = arr.filter(doc => doc.id !== excludeId);
+  let filtered=arr
+  if(excludeId){
+    filtered = arr.filter(doc => doc.id !== excludeId);
+  }
 
   if (count > filtered.length) {
     throw new Error("Not enough documents after excluding");
@@ -38,7 +41,7 @@ export const getSingleHack=async(slug:string):Promise<HackModel|undefined>=>{
   if (!singleHack) return undefined
   return singleHack
 }
-export const getSimilarHack=async(type:string,slug:string):Promise<HackModel[]>=>{
+export const getSimilarHack=async(type:string,slug?:string):Promise<HackModel[]>=>{
   const hackType=type==='trending'?'regular':"trending"
   const res=await fetch(`${backend_api}/api/hacks/type/${hackType}`)
   if(!res.ok){
