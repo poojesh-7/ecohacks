@@ -39,19 +39,22 @@ const HackForm=({hack,formActionType}:{hack?:string,formActionType:string})=>{
     setSteps(steps.filter((_, i) => i !== index));
   };
 
-  useEffect(()=>{
-    const sendReq=async()=>{
-      const hackDetails:HackModel|undefined=await getSingleHack(hack)
-      if(hackDetails){
-          setTitle(hackDetails.title)
-          setImage(hackDetails.image)
-          setDescription(hackDetails.description)
-          setSteps([...hackDetails.steps])
-          setTutorialLink(hackDetails.tutorial || "")
+  useEffect(() => {
+  if (formActionType !== 'post') {
+    const sendReq = async () => {
+      const hackDetails: HackModel | undefined = await getSingleHack(hack);
+      if (hackDetails) {
+        setTitle(hackDetails.title);
+        setImage(hackDetails.image);
+        setDescription(hackDetails.description);
+        setSteps([...hackDetails.steps]);
+        setTutorialLink(hackDetails.tutorial || "");
       }
-    }
-    sendReq()
-  },[hack])
+    };
+    sendReq();
+  }
+}, [hack, formActionType]);
+
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
 
