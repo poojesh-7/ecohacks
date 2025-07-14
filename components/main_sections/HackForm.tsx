@@ -11,6 +11,7 @@ import { useAuth } from "@/context/AuthProvider";
 import FormButton from "@/ui/FormButton";
 import { getSingleHack } from "@/lib/hackaction";
 import { HackModel } from "@/lib/model";
+import { redirect } from "next/navigation";
 const HackForm=({hack,formActionType}:{hack?:string,formActionType:string})=>{
  const {token}=useAuth()
   const [submitting,setSubmitting]=useState(false)
@@ -86,7 +87,9 @@ const HackForm=({hack,formActionType}:{hack?:string,formActionType:string})=>{
   const formRef = useRef<HTMLFormElement>(null);
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
-    // console.log(formActionType,formAction)
+    if(!token){
+      redirect("/signup")
+    }
     if (!validateForm()) return;
     setSubmitting(true);
     if (formRef.current) {
