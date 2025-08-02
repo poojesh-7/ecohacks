@@ -7,6 +7,7 @@ import HackCard from "../hero_comp/HackCard";
 import { useMemo, useState } from "react";
 import Pagination from "@/ui/Pagination";
 import Fuse from "fuse.js";
+import Image from "next/image";
 
 const HacksLoader: React.FC<{ hacks: HackModel[]; text: string }> = ({
   hacks,
@@ -71,6 +72,7 @@ const HacksLoader: React.FC<{ hacks: HackModel[]; text: string }> = ({
   const handleResultClick = (hack: HackModel) => {
     setSelectedHack(hack);
     setQuery(hack.title);
+    setPageno(1)
   };
 
   const resetSearch = () => {
@@ -95,6 +97,7 @@ const HacksLoader: React.FC<{ hacks: HackModel[]; text: string }> = ({
           placeholder="Search hacks..."
           className={classes.search_bar}
         />
+        <div className={classes.search_hover_line}></div>
         {query && !selectedHack && (
           <ul className={classes.query_result}>
             {filteredHacks.slice(0, 6).map((hack, i) => (
@@ -104,6 +107,7 @@ const HacksLoader: React.FC<{ hacks: HackModel[]; text: string }> = ({
                 onClick={() => handleResultClick(hack)}
               >
                 <strong>{hack.title}</strong>
+                <Image src="https://i.ibb.co/svbn908/search-1.png" alt="search" width={25} height={25} style={{marginRight:"10px"}} />
               </li>
             ))}
           </ul>

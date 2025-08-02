@@ -12,8 +12,10 @@ import FormButton from "@/ui/FormButton";
 import { getSingleHack } from "@/lib/hackaction";
 import { HackModel } from "@/lib/model";
 import { redirect } from "next/navigation";
+// import { useRouter } from "next/router";
 const HackForm=({hack,formActionType}:{hack?:string,formActionType:string})=>{
- const {token}=useAuth()
+  const {token}=useAuth()
+  // const router=useRouter()
   const [submitting,setSubmitting]=useState(false)
   const [, startTransition] = useTransition()
   const [title, setTitle] = useState("");
@@ -105,10 +107,20 @@ const HackForm=({hack,formActionType}:{hack?:string,formActionType:string})=>{
       });
     }
   };
-
-
+  const goToSignup=(e)=>{
+    e.preventDefault()
+    redirect("/signup")
+  }
+  
+  
   return (
     <Suspense fallback={<Loader />}>
+    {!token && <div className="modal">
+      <form onSubmit={goToSignup} className="unauth_form">
+        <h1 className="unauth_text">Got a hack? Share it with the world — Sign up or Log in!</h1>
+        <button className="proceed_btn">proceed</button>
+      </form>
+    </div> }
     <section>
       <TitleCover text="Edit Hack" />
       <form ref={formRef}  onSubmit={submitHandler} className="hack_form">
@@ -194,7 +206,7 @@ const HackForm=({hack,formActionType}:{hack?:string,formActionType:string})=>{
           classType="form_submit_btn"
           text="Submit"
           disabled={submitting}
-        />
+          />
         {state.message && <p>{state.message}</p>}
       </form>
     </section>

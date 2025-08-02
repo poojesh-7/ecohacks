@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import ProfilePage from "@/components/main_sections/ProfilePage";
 import { userLogout, userProfile } from "@/lib/useraction";
 import { useAuth } from "@/context/AuthProvider";
+import Loader from "@/ui/Loader";
 
 type ProfileType = {
   username: string;
@@ -49,7 +50,7 @@ const Profile = () => {
     }, 50);
   };
 
-  if (loading) return <p>Loading profile...</p>;
+  if (loading) return <Loader />;
   if (!token) return null;
 
   return <ProfilePage logoutFunction={logoutFunction} profile={profile} />;
