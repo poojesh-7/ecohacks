@@ -18,8 +18,8 @@ const HackCard:React.FC<HackCardProps>=({slug,image,title,username,trending,post
             alt={slug}
             width={0}
             height={0}
-            sizes="100vw"
-            style={{ width: '100%', height: 'auto' }}
+            sizes="100%"
+            style={{ width: '100%', height: 'auto',borderRadius:"0 0 5px 0" }}
             priority
         />
         <div className={classes.btn_cover}>
