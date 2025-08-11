@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 import { HacksData } from "@/lib/hackaction";
 import HacksLoader from "@/components/main_sections/HacksLoader";
