@@ -23,7 +23,9 @@ function getRandomDocuments(arr:HackModel[], count = 3, excludeId:string) {
 
 export const HacksData=async(type:string):Promise<HackModel[]>=>{  
   const isTrending:boolean=type==="regular"?false:true
-  const res=await fetch(`${backend_api}/api/hacks/type/${isTrending?"trending":"regular"}`)
+  const res=await fetch(`${backend_api}/api/hacks/type/${isTrending?"trending":"regular"}`,
+    { next: { revalidate: 60 } }
+  )
   if(!res.ok){
     throw new Error("failed to fetch")
   }
