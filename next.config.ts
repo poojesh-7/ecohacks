@@ -5,7 +5,24 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ["i.ibb.co"],  
+    domains: ["i.ibb.co"],
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)", // applies to all routes
+        headers: [
+          {
+            key: "Cross-Origin-Opener-Policy",
+            value: "unsafe-none", // ✅ disable strict isolation
+          },
+          {
+            key: "Cross-Origin-Embedder-Policy",
+            value: "unsafe-none", // ✅ disable embedder restrictions
+          },
+        ],
+      },
+    ];
   },
 };
 
