@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ["i.ibb.co"],
+    domains: ["res.cloudinary.com"],
   },
   async headers() {
     return [
