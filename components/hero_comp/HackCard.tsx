@@ -6,11 +6,11 @@ import Link from "next/link"
 import { dateFormat } from "@/utils/utils"
 import TitleUnderline from "@/ui/TitleUnderline"
 import Image from "next/image"
-type HackModel={image:string,title:string,slug:string,username:string,trending:boolean,postedOn:string}
+type HackModel={image:string,title:string,slug:string,username:string,trending:boolean,extraStyle:{fontStyle:string},postedOn:string}
 interface HackCardProps extends HackModel {
   showuser: boolean,btntext?:string
 }
-const HackCard:React.FC<HackCardProps>=({slug,image,title,username,trending,postedOn,showuser,btntext})=>{
+const HackCard:React.FC<HackCardProps>=({slug,image,title,username,trending,postedOn,showuser,btntext,extraStyle})=>{
    return <div className={classes.hackcard}>
         {/* <img className={classes.hack_image} src={image} alt={slug} /> */}
         <Image
@@ -20,6 +20,7 @@ const HackCard:React.FC<HackCardProps>=({slug,image,title,username,trending,post
             height={0}
             sizes="100vw"
             style={{ width: "100%", height: "auto", borderRadius: "0 0 12px 0" }}
+            loading="lazy"
             />
 
         <div className={classes.btn_cover}>
@@ -33,7 +34,7 @@ const HackCard:React.FC<HackCardProps>=({slug,image,title,username,trending,post
             }
         </div>
         <div className={classes.title}>
-            <TitleUnderline classType="card_title" text={title}></TitleUnderline>
+            <TitleUnderline extraStyle={extraStyle} classType="card_title" text={title}></TitleUnderline>
         </div>
         {/* <p className={classes.title}>{title}</p> */}
         {

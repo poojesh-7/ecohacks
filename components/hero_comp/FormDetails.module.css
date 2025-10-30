@@ -2,6 +2,7 @@
   margin: 80px 0 20px 0;
 }
 .details_holder {
+  margin:30px 0 60px 0;
   background-color: white;
   border-radius: 5px;
   padding-left: 10px;
@@ -33,4 +34,10 @@
 .btn_cover {
   justify-self: end;
   grid-area: btn;
+}
+
+@media screen and (max-width:600px) {
+    .headline{
+      font-size:25px;
+    }
 }

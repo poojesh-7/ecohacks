@@ -40,7 +40,7 @@ const ViewSingleHack:React.FC<{singleHack:HackModel,similarhacks:HackModel[]}>=(
         
     </div>
     <div className={classes.usercontact}>
-        <TitleUnderline text="contact" />
+        <TitleUnderline text="Contact" />
         <p><b>Creator : </b> {singleHack.username}</p>
         {singleHack.email && 
         <p><b>Email : </b> {singleHack.email}</p>
@@ -51,7 +51,7 @@ const ViewSingleHack:React.FC<{singleHack:HackModel,similarhacks:HackModel[]}>=(
         <div className={classes.hacks_section}>
             {similarhacks.map(hack=>(
                 <div key={hack.slug} className={classes.hack_card_visibility}>
-                    <HackCard trending={hack.trending}  image={hack.image} title={hack.title} username={hack.username} postedOn={hack.postedOn} slug={hack.slug} showuser={false} />
+                    <HackCard trending={hack.trending}  image={hack.image} title={hack.title} username={hack.username} postedOn={hack.postedOn} slug={hack.slug} extraStyle={{fontSize:"20px"}} showuser={false} />
                 </div>
             ))}
         </div>

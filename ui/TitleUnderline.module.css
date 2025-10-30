@@ -3,6 +3,7 @@
 }
 
 .title_underline h2 {
+  font-size: 20px;
   margin-bottom: 2px;
 }
 
@@ -20,4 +21,11 @@
   width: 20%;
   height: 5px;
   background-color: #ff3381;
+}
+
+@media screen and (max-width: 600px) {
+  .title_underline h2 {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
 }
