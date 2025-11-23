@@ -30,7 +30,7 @@ export const HacksData=async(type:string):Promise<HackModel[]>=>{
     throw new Error("failed to fetch")
   }
   const data=await res.json()
-  return data
+  return data.hacks
 }
 
 export const getSingleHack=async(slug:string):Promise<HackModel|undefined>=>{
@@ -54,8 +54,8 @@ export const getSimilarHack=async(type:string,slug?:string):Promise<HackModel[]>
     throw new Error("something went wrong")
   }  
   
-  const hacks= await res.json()
-  const similarHacks=getRandomDocuments(hacks,3,slug)
+  const data= await res.json()
+  const similarHacks=getRandomDocuments(data.hacks,3,slug)
   return similarHacks
 }
 
