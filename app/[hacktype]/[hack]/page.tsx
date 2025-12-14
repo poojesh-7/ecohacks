@@ -60,9 +60,19 @@ export default async function Page({
 }: {
   params: { hacktype: string; hack: string };
 }) {
-  const singleHack = await getSingleHackCached(params.hack);
-  const similarHacks = await getSimilarHack(params.hacktype,params.hack);
+  const { hacktype, hack } = await params;
+  const [singleHack, similarHacks] = await Promise.all([
+    getSingleHackCached(hack),
+    getSimilarHack(hacktype,hack),
+  ]);
+
   if (!singleHack) return notFound();
-  console.log("loaded hack")
-  return <ViewSingleHack singleHack={singleHack} similarhacks={similarHacks} />;
+
+  return (
+    <ViewSingleHack
+      singleHack={singleHack}
+      similarhacks={similarHacks}
+    />
+  );
 }
+

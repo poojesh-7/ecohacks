@@ -11,7 +11,8 @@ export async function generateMetadata({
 }: {
   params: { hacktype: string };
 }): Promise<Metadata> {
-  const isTrending = params.hacktype === "trending";
+  const {hacktype}=await params
+  const isTrending = hacktype === "trending";
 
   return {
     title: isTrending

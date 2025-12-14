@@ -11,7 +11,7 @@ type ProfileModel={
     profile:userModel,
     logoutFunction:()=>void
 }
-const ProfilePage:React.FC<ProfileModel>=({profile,logoutFunction})=>{
+const ProfilePage:React.FC<ProfileModel | null>=({profile,logoutFunction})=>{
     const [showUserPosts,setShowPosts]=useState(false)
     const toggleShow=()=>{
         setShowPosts(prev=>!prev)

@@ -3,7 +3,7 @@ import HackDetails from "@/components/hero_comp/FormDetails"
 import RegularHacks from "@/components/hero_comp/RegularHacks"
 import TrendingHacks from "@/components/hero_comp/TrendingHacks"
 import {  getSimilarHack } from "@/lib/hackaction"
-import React from "react"
+
 const RegularHacksSection=async()=>{
     const hacks=await getSimilarHack('trending')
     return <RegularHacks hacks={hacks} />

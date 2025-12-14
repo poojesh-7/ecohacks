@@ -1,24 +1,25 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  productionBrowserSourceMaps: false,
   images: {
     domains: ["res.cloudinary.com","i.ibb.co"],
+  }, 
+  typescript: {
+    ignoreBuildErrors: true,
   },
   async headers() {
     return [
       {
-        source: "/(.*)", // applies to all routes
+        source: "/(.*)", 
         headers: [
           {
             key: "Cross-Origin-Opener-Policy",
-            value: "unsafe-none", // ✅ disable strict isolation
+            value: "unsafe-none", 
           },
           {
             key: "Cross-Origin-Embedder-Policy",
-            value: "unsafe-none", // ✅ disable embedder restrictions
+            value: "unsafe-none", 
           },
         ],
       },
