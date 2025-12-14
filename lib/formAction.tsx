@@ -2,7 +2,6 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 const backend_api=process.env.NEXT_BACKEND_URL
-
 export async function PostHack(
   prevState: { message: string },
   formData: FormData 
@@ -24,6 +23,7 @@ export async function PostHack(
       description,steps,image,tutorialLink
     })
   })
+  console.log(title,image)
   if(!res.ok){
     throw new Error("failed to post")
   }

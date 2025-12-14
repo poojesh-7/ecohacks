@@ -1,4 +1,5 @@
-import { getSimilarHack, getSingleHack } from "@/lib/hackaction";
+import { getSimilarHack } from "@/lib/hackaction";
+import {getSingleHackCached} from "@/lib/helper/helper"
 import ViewSingleHack from "@/components/main_sections/ViewSingleHack";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -8,7 +9,7 @@ export async function generateMetadata({
 }: {
   params: { hacktype: string; hack: string };
 }): Promise<Metadata> {
-  const result = await getSingleHack(params.hack);
+  const result = await getSingleHackCached(params.hack);
 
   if (!result) {
     return {
@@ -59,9 +60,9 @@ export default async function Page({
 }: {
   params: { hacktype: string; hack: string };
 }) {
-  const singleHack = await getSingleHack(params.hack);
+  const singleHack = await getSingleHackCached(params.hack);
   const similarHacks = await getSimilarHack(params.hacktype,params.hack);
   if (!singleHack) return notFound();
-
+  console.log("loaded hack")
   return <ViewSingleHack singleHack={singleHack} similarhacks={similarHacks} />;
 }
