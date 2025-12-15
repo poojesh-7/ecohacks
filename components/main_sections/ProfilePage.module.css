@@ -1,15 +1,10 @@
 .profile_page {
-  padding: 0 20px 50px 20px;
   display: grid;
   grid-template-areas: "top" "bottom";
   border-radius: 10px;
-  /* justify-content: center; */
-  /* align-items: center; */
-  position: absolute;
   width: 100%;
   height: 100%;
-  left: 0;
-  margin-top: -20px;
+  margin-bottom: -20px;
 }
 
 .profile_grid {
@@ -55,7 +50,6 @@
 
 .acc_created {
   grid-area: bottom_middle;
-  /* width: 100px; */
   color: gray;
   justify-self: center;
   align-self: center;
@@ -122,9 +116,6 @@
 }
 
 @media screen and (min-width: 1100px) {
-  .profile_page {
-    padding: 0 50px 50px 50px;
-  }
   .profile_grid {
     width: 60%;
   }

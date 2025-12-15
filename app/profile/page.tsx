@@ -19,7 +19,6 @@ const Profile = () => {
   const [profile, setProfile] = useState<ProfileType | null>(null);
   const [loading, setLoading] = useState(true);
 
-
   useEffect(() => {
     if (!token) {
       setLoading(false);
@@ -35,7 +34,7 @@ const Profile = () => {
   }, [token]);
 
   useEffect(() => {
-    if (pathname !== "/profile") return; // only redirect if you're on /profile
+    if (pathname !== "/profile") return; 
     if (!loading && !token) {
       router.push("/signup");
     }
