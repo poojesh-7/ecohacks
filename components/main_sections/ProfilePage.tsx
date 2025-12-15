@@ -23,7 +23,8 @@ const ProfilePage:React.FC<ProfileModel | null>=({profile,logoutFunction})=>{
             <p>{profile?.user.username}</p>
             <p>{profile?.user.email}</p>
         </div>
-        <p className={classes.acc_created}>{dateFormat(profile?.user.createdAt)}</p>
+        <p className={classes.acc_created}></p>
+        {/* <p className={classes.acc_created}>{'' || dateFormat(profile?.user.createdAt)}</p> */}
         <img alt="profile" className={classes.profile_img} />
             <ClickEventButton  clickEvent={logoutFunction} text="Logout" classType="logout_btn" />
         
