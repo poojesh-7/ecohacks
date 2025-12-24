@@ -29,6 +29,11 @@
   background-repeat: no-repeat;
   animation: l3 1s infinite linear;
 }
+
+.loader_text {
+  margin-right: 10px;
+}
+
 @keyframes l3 {
   100% {
     background-position: left top, center top, right top;
