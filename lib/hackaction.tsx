@@ -34,9 +34,11 @@ export const HacksData=async(type:string):Promise<HackModel[]>=>{
 }
 
 export const getSingleHack=async(slug:string):Promise<HackModel|undefined>=>{
-  const res=await fetch(`${backend_api}/api/hacks/slug/${slug}/view`,{
-    next:{revalidate:60}
-  })
+  await new Promise((res) => setTimeout(res, 2000));
+
+  const res=await fetch(`${backend_api}/api/hacks/slug/${slug}/view`,
+    {next:{revalidate:60}}
+  )
   if(!res.ok){
     throw new Error("something went wrong")
   }  
@@ -45,6 +47,7 @@ export const getSingleHack=async(slug:string):Promise<HackModel|undefined>=>{
   if (!singleHack) return undefined
   return singleHack
 }
+
 export const getSimilarHack=async(type:string,slug?:string):Promise<HackModel[]>=>{
   const hackType=type==='trending'?'regular':"trending"
   const res=await fetch(`${backend_api}/api/hacks/type/${hackType}`,{
