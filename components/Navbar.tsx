@@ -13,7 +13,6 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  // Detect clicks outside nav to close menu
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const navbar = document.querySelector(`.${styles.navbar}`);

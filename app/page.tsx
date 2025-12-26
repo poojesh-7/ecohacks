@@ -14,11 +14,11 @@ const TrendingHacksSection=async()=>{
 }
 const HeroPage=()=>{
     
-    return <section>
+    return <>
              <RegularHacksSection />
             <HackDetails />
             <TrendingHacksSection/>    
-    </section>
+    </>
 }
 
 export default HeroPage

@@ -4,7 +4,7 @@ import Link from "next/link"
 import TitleCover from "@/ui/TitleCover"
 import Button from "@/ui/Button"
 const HackDetails:React.FC=()=>{
-    return <div className={classes.form_details}>
+    return <section className={classes.form_details}>
         <TitleCover text="Got a Clever Hack? Share it & Score Points!" />
         <div className={classes.details_holder}>
             <p className={classes.steps}>
@@ -36,7 +36,7 @@ const HackDetails:React.FC=()=>{
                 </Link>
             </div>
         </div>
-    </div>
+    </section>
 }
 
 export default HackDetails

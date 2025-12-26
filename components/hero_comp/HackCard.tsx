@@ -11,7 +11,7 @@ interface HackCardProps extends HackModel {
   showuser: boolean,btntext?:string
 }
 const HackCard:React.FC<HackCardProps>=({slug,image,title,username,trending,postedOn,showuser,btntext,extraStyle})=>{
-   return <div className={classes.hackcard}>
+   return <article className={classes.hackcard}>
         {/* <img className={classes.hack_image} src={image} alt={slug} /> */}
         <Image
             src={image}
@@ -45,7 +45,7 @@ const HackCard:React.FC<HackCardProps>=({slug,image,title,username,trending,post
             </>
         }
 
-    </div>
+    </article>
 }
 
 export default HackCard

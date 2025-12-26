@@ -7,8 +7,8 @@ import { dateFormat } from "@/utils/utils"
 import LikeDislikeWrapper from "@/utils/LikeDislikeWrapper"
 
 const ViewSingleHack:React.FC<{singleHack:HackModel,similarhacks:HackModel[]}>=({singleHack,similarhacks})=>{
-    return <section className={classes.view_section}>
-    <div className={classes.viewsingle}>
+    return <main className={classes.view_section}>
+    <section className={classes.viewsingle}>
         <div className={classes.title}>
             <TitleCover text={singleHack.title}/>
             <div className={classes.like_dislike}>
@@ -38,15 +38,15 @@ const ViewSingleHack:React.FC<{singleHack:HackModel,similarhacks:HackModel[]}>=(
         </div>
         }
         
-    </div>
-    <div className={classes.usercontact}>
+    </section>
+    <section className={classes.usercontact}>
         <TitleUnderline text="Contact" />
         <p><b>Creator : </b> {singleHack.username}</p>
         {singleHack.email && 
         <p><b>Email : </b> {singleHack.email}</p>
         }
-    </div>
-    <div className={classes.similar_hacks}>
+    </section>
+    <section className={classes.similar_hacks}>
         <TitleUnderline text="Readers Also Loved" />
         <div className={classes.hacks_section}>
             {similarhacks.map(hack=>(
@@ -55,7 +55,7 @@ const ViewSingleHack:React.FC<{singleHack:HackModel,similarhacks:HackModel[]}>=(
                 </div>
             ))}
         </div>
-    </div>
-    </section> 
+    </section>
+    </main> 
 }
 export default ViewSingleHack

@@ -5,7 +5,7 @@ import classes from "./HackSection.module.css"
 import Link from "next/link"
 import { HackModel } from "@/lib/model"
 const RegularHacks:React.FC<{hacks:HackModel[]}>=({hacks})=>{
-    return <div className={classes.regular}>
+    return <section className={classes.regular}>
         <TitleCover text="Trash to Treasure: Clever Reuses for Everyday Waste" />
             <div className={classes.hacks_holder}>
             {hacks.map((hack,i)=>(
@@ -18,7 +18,7 @@ const RegularHacks:React.FC<{hacks:HackModel[]}>=({hacks})=>{
              <img src="https://i.ibb.co/mzcMN4k/right-arrow-2.png" alt="right-arrow-2" className={classes.arrow} />
         </div>
         </Link>
-    </div>
+    </section>
 }
 
 export default RegularHacks

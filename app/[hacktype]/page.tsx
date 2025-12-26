@@ -11,7 +11,7 @@ export async function generateMetadata({
 }: {
   params: { hacktype: string };
 }): Promise<Metadata> {
-  const {hacktype}=await params
+  const {hacktype}=params
   const isTrending = hacktype === "trending";
 
   return {
@@ -63,12 +63,19 @@ export async function generateMetadata({
 
 
 
-const Page = async ({ params }: { params: { hacktype: string } }) => {
-  const hacks = await HacksData(params.hacktype);
-  if (!hacks || hacks.length === 0) return notFound(); // Optional
+const Page = async ({
+  params,
+}: {
+  params: Promise<{ hacktype: string }>;
+}) => {
+  const { hacktype } = await params; 
+
+  const hacks = await HacksData(hacktype);
+
+  if (!hacks || hacks.length === 0) return notFound();
 
   const text =
-    params.hacktype === "regular"
+    hacktype === "regular"
       ? "Trash to Treasure: Clever Reuses for Everyday Waste"
       : "Trending hacks for your household waste";
 

@@ -64,9 +64,9 @@ export default function RootLayout({
       <body className={josefin.className}>
         <AuthProvider>
         <Navbar />
-        <section className="hero_section">
+        <main className="hero_section">
           {children}
-        </section>
+        </main>
         </AuthProvider>
         <Footer />
       </body>
