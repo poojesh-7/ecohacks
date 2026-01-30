@@ -1,10 +1,12 @@
 .footer-base {
-  margin: 0 -20px;
+  width: 99vw;
+  margin: 0 -30px;
   background-color: #000000; /* Dark Forest Green */
   border-top: 4px solid #34d399; /* Mint Green */
   color: #b4e8c6; /* Light Green */
   padding: 3rem 0 1.5rem 0;
-  box-shadow: 0 -10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 -10px 15px -3px rgba(0, 0, 0, 0.1),
     0 -4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
@@ -32,6 +34,9 @@
 
 @media (min-width: 1024px) {
   /* Larger Desktop (lg breakpoint equivalent) */
+  .footer-base {
+    width: 99.2vw;
+  }
   .footer-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
@@ -159,7 +164,9 @@
   color: white;
   caret-color: #34d399;
   box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-  transition: border-color 200ms, box-shadow 200ms;
+  transition:
+    border-color 200ms,
+    box-shadow 200ms;
 }
 
 .email-input::placeholder {
@@ -184,7 +191,8 @@
   justify-content: center;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.06);
 }
 
